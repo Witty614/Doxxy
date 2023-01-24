@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div>
+    <h2>{% trans object.page.title %}</h2>
+    <p>{% trans object.page.body %}</p>
+</div>
+
+<h2>{% trans "Comments"%}</h2>
+{% for obj in object.comments %}
+<div>
+    <h4>{{obj.created_at}}</h4>
+    <p>{% trans obj.body %}</p>
+</div>
+{% endfor %}
+{% endblock %}
